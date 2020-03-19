@@ -23,23 +23,15 @@ function receiveMessage(event) {
 }
 </script>
 <script>
-var QueryString = function () {
-            var query_string = {};
-            var query = window.location.search.substring(1);
-            var vars = query.split("&");
-            for (var i=0;i<vars.length;i++) {
-                var pair = vars[i].split("=");
-                if (typeof query_string[pair[0]] === "undefined") {
-                    query_string[pair[0]] = decodeURIComponent(pair[1]);
-                } else if (typeof query_string[pair[0]] === "string") {
-                    var arr = [ query_string[pair[0]],decodeURIComponent(pair[1]) ];
-                    query_string[pair[0]] = arr;
-                } else {
-                    query_string[pair[0]].push(decodeURIComponent(pair[1]));
-                }
-            }
-            return query_string;
-        }();
+function getQueryVariable(variable) {
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i=0;i<vars.length;i++) {
+            var pair = vars[i].split("=");
+            if(pair[0] == variable){return pair[1];}
+        }
+        return(false);
+    }
 //var identifier = QueryString.identifier;
 var id = decodeURIComponent(getQueryVariable("disqus_identifier"));
 console.log(id);
@@ -47,7 +39,7 @@ var identifier = "5516 https://melhorescolha.com/blog/?p=5516";
 //var identifier = "internet-direitos-consumidor";
 
 var disqus_config = function () {
-	     console.log("foi??  19");
+	     console.log("foi??  20");
 	console.log(identifier);
 	    this.page.identifier = identifier;
 };
