@@ -33,17 +33,17 @@ function getQueryVariable(variable) {
 	return(false);
 }
 var url = "https://melhorescolha.com/blog/internet-direitos-consumidor/";
-var identifier = "5516 https:\/\/melhorescolha.com\/blog\/?p=5516";
+var identifier = "5516 https://melhorescolha.com/blog/?p=5516";
 var disqus_name = "internet-direitos-consumidor";
 var disqus_title = "9 Direitos do Consumidor de Internet que voc\u00ea precisa saber!";
 var postId = "5516";
 
 var disqus_config = function () {
-		console.log("foi??  4");
+		console.log("foi??  5");
             this.page.url = url;
 	    this.page.id = postId;
 	    this.page.title = disqus_title;
-		this.page.identifier = identifier;
+		this.page.identifier = url;
 };
 
 (function() {
