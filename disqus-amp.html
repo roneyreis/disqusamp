@@ -34,12 +34,11 @@ function getQueryVariable(variable) {
     }
 //var identifier = QueryString.identifier;
 var id = decodeURIComponent(getQueryVariable("disqus_identifier"));
-console.log(id);
-var identifier = "5516 https://melhorescolha.com/blog/?p=5516";
-//var identifier = "internet-direitos-consumidor";
+var identifier = id + " https://melhorescolha.com/blog/?p=". + id;
+console.log(identifier);
 
 var disqus_config = function () {
-	     console.log("foi??  20");
+	     console.log("foi??  21");
 	console.log(identifier);
 	    this.page.identifier = identifier;
 };
