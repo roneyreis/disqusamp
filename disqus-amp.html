@@ -41,11 +41,13 @@ var QueryString = function () {
             return query_string;
         }();
 //var identifier = QueryString.identifier;
+var id = decodeURIComponent(getQueryVariable("disqus_identifier"));
+console.log(id);
 var identifier = "5516 https://melhorescolha.com/blog/?p=5516";
 //var identifier = "internet-direitos-consumidor";
 
 var disqus_config = function () {
-	     console.log("foi??  18");
+	     console.log("foi??  19");
 	console.log(identifier);
 	    this.page.identifier = identifier;
 };
